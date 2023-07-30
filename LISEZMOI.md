@@ -10,6 +10,7 @@ Monday, July 31, 2023
 # Usage
 ## Préparation:
 mizf ./text/prepa.miz
+
 miz2prel ./text/prepa.miz
 ## Le fichier utilisable:
 ./text/exemple.miz
