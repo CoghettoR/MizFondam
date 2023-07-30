@@ -1,5 +1,5 @@
 # MizFondam
-Example for "Mizar 50 Workshop":
+Exemple pour "Mizar 50 Workshop":
 
 Mizar 50 Workshop, Affiliated with ITP 2023
 Location: Białystok, Poland
@@ -7,8 +7,8 @@ Monday, July 31, 2023
 
 "Mizar is in a box: a Raspberry PI for checking elementary calculations"
 
-# Author
-Roland Coghetto - roland.coghetto@cafr-msa2p.be - "cafr msa2p" asbl, Belgium
+# Auteur
+Roland Coghetto - roland.coghetto@cafr-msa2p.be - "cafr msa2p" asbl, Belgique.
 
 # Licence
 

@@ -1,0 +1,402 @@
+environ
+
+ vocabularies ARYTM_3, RELAT_1, NAT_1, PREPA, CARD_1, XXREAL_0, ARYTM_1,
+      REAL_1, SIN_COS, XXREAL_1, NUMBERS;
+ notations ORDINAL1, XCMPLX_0, XREAL_0, SIN_COS, XXREAL_0, RCOMP_1;
+ constructors SIN_COS, RCOMP_1;
+ registrations ORDINAL1, XREAL_0, NAT_1;
+ requirements NUMERALS, SUBSET, ARITHM, REAL;
+ theorems XCMPLX_1, SIN_COS, XXREAL_1, XREAL_1;
+
+begin
+
+definition
+  func ___ -> Nat equals 32767 * 32767 * 32767;
+  coherence;
+end;
+
+begin :: Longueur
+
+definition
+  let x being Real;
+  func x mm -> Real equals x / 1000;
+  coherence;
+end;
+
+definition
+  let x,y being Real;
+  func x mm y-> Real equals (x / 1000) + y;
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x cm -> Real equals x / 100;
+  coherence;
+end;
+
+definition
+  let x,y being Real;
+  func x cm y -> Real equals x / 100 + y;
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x dm -> Real equals x / 10;
+  coherence;
+end;
+
+definition
+  let x,y being Real;
+  func x dm y -> Real equals x / 10 + y;
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x m -> Real equals x;
+  coherence;
+end;
+
+definition
+  let x,y being Real;
+  func x m y -> Real equals x + y;
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x dam -> Real equals x * 10;
+  coherence;
+end;
+
+definition
+  let x,y being Real;
+  func x dam y -> Real equals x * 10 + y;
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x hm -> Real equals x * 100;
+  coherence;
+end;
+
+definition
+  let x,y being Real;
+  func x hm y -> Real equals x * 100 + y;
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x km -> Real equals x * 1000;
+  coherence;
+end;
+
+definition
+  let x,y being Real;
+  func x km y -> Real equals x * 1000 + y;
+  coherence;
+end;
+
+theorem
+  10 m = 1000 cm;
+
+theorem
+  20 cm + 1 mm = 201 mm;
+
+theorem
+  20 cm 1 mm = 201 mm;
+  
+theorem
+  1 m 25 cm 10 mm = 126 cm; 
+
+theorem
+  1 km + 100 cm = 1002 m - 1 m;
+
+theorem
+  4 mm + 1 cm = 14 mm;
+  
+theorem
+  14 mm + 26 mm = 4 cm;
+  
+theorem 
+  4 * 15 mm = 6 cm;
+
+theorem
+  for x,y being Real st x <= y holds x cm <= y cm by XREAL_1:72;
+
+theorem
+  for x,y,a,b being Real st x <= y & a <= b holds x cm a mm <= y cm b mm 
+  proof
+    let x,y,a,b be Real;
+    assume that
+A1: x <= y and
+A2: a <= b;
+    x / 100 <= y / 100 & a / 1000 <= b / 1000 by A1,A2,XREAL_1:72;
+    hence thesis by XREAL_1:7;
+  end;
+
+theorem
+  4 * 15 mm < 7 cm;
+
+theorem
+  4 * 15 mm <= 7 cm;
+
+theorem
+  12 cm + 4 * 15 mm + 3 m = 318 cm;
+
+theorem
+  1 km + 140 cm + 1200 mm = (100 * 1000 + 260) cm;
+
+begin :: limitations
+
+theorem
+  12 mm + 5 cm = 5 cm + 12 mm &
+  12 mm 5 cm <> 5 cm 12 mm &
+  12 mm 5 cm = 5 cm +(12/100) mm;
+
+theorem
+  1 km + 1 m = 1 m + 1 km &
+  1 km 1 m <> 1 m 1 km &
+  1 m 1 km = 2 km;
+
+theorem 
+  1 km + 140 cm + 1200 mm = (100 * 1000 + 260) cm;
+
+theorem 
+  1 km + 140 cm + 1200 mm = 10026 dm;
+
+definition
+  func cent-mille-deux-cent-soixante -> Real equals
+  100*1000+260;
+  coherence;
+end;
+
+theorem
+  1 km + 140 cm + 1200 mm = cent-mille-deux-cent-soixante cm;
+
+begin :: l
+
+definition
+  let x being Real;
+  func x ml -> Real equals x;
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x cl -> Real equals x * 10;
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x dl -> Real equals x * 100;
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x l -> Real equals x * 1000;
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x dal -> Real equals x * 1000 * 10;
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x hl -> Real equals x * 1000 * 100;
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x kl -> Real equals x * 1000 * 1000;
+  coherence;
+end;
+
+begin :: kg
+
+definition
+  let x being Real;
+  func x mg -> Real equals x;
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x cg -> Real equals x * 10;
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x dg -> Real equals x * 100;
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x g -> Real equals x * 1000;
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x dag -> Real equals x * 1000 * 10;
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x hg -> Real equals x * 1000 * 100;
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x kg -> Real equals x * 1000 * 1000;
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x tonne -> Real equals x * 1000 * 1000 * 1000;
+  coherence;
+end;
+
+begin :: temporel
+
+definition
+  let x being Real;
+  func x h -> Real equals x * 3600;
+  coherence;
+end;
+
+definition
+  let x,y being Real;
+  func x h y -> Real equals x * 3600 + y;
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x min -> Real equals x * 60;
+  coherence;
+end;
+
+definition
+  let x,y being Real;
+  func x min y -> Real equals x * 60+y;
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x sec -> Real equals x;
+  coherence;
+end;
+
+theorem
+  12 h 30 min 12 sec = 10 h + 2 h 30 min 12 sec;
+
+theorem
+  30 min = 1/2 h;
+
+theorem
+  12 min  = 1/5 h;
+
+begin :: Angles
+  
+definition
+  let x being Real;
+  func x deg -> Real equals (x * 3600 ) * PI / (3600 * 180);
+  coherence;
+end;
+
+definition
+  let x,y being Real;
+  func x deg y -> Real equals (x * 3600 + y) * PI / (3600 * 180);
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x' -> Real equals (x * 60) * PI / (3600 * 180);
+  coherence;
+end;
+
+definition
+  let x,y being Real;
+  func x'y -> Real equals (x * 60 + y) * PI / (3600 * 180);
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x" -> Real equals x * PI / (3600 * 180);
+  coherence;
+end;
+
+definition
+  let x being Real;
+  func x rad -> Real equals x;
+  coherence;
+end;
+
+theorem
+  12 deg 34'34"= 10 deg + 2 deg 34'34";
+
+notation
+  let x be Real;
+  synonym x^o for x deg;
+end;
+
+theorem
+  12 deg 34'34"= 10 deg + 2 deg 34'34" &
+  10 deg + 2 deg 34'34" = 12 deg 34' 34";
+
+
+theorem
+  10^o = 10 deg;
+
+
+theorem 
+  for a being Real holds a deg = (PI / 180) * a rad;
+
+theorem 
+  for a being Real holds a rad = (180 / PI) * a deg
+  proof
+    let a be Real;
+    PI in ].0,4.[ by SIN_COS:def 28;
+    then
+A1: 0 < PI & PI < 4 by XXREAL_1:4;
+A2: PI * (1/PI) = PI * 1/PI by XCMPLX_1:74
+               .= 1 by A1,XCMPLX_1:60;
+    (180 / PI) * a deg = 180 * (1 / PI) * (a * 3600 * PI / (3600 * 180))
+                            by XCMPLX_1:99
+                      .= 1 * (PI * (1/ PI)) * 1 * a
+                      .= a rad by A2;
+    hence thesis;
+  end;
+
+theorem 
+  0 ^o = 0 & 30^o = PI/6 & 45^o = PI/4 & 60^o = PI/3 & 90 ^o = PI/2 &
+  120^o = 4 * PI/6 & 135^o = 3  *PI/4 & 150^o=5 * PI/6 & 180^o = PI;
+
+theorem 
+  0 deg = 0 & 30 deg = PI/6 & 45 deg = PI/4 & 60 deg = PI/3 rad &
+  90 deg = PI/2 rad & 120 deg = 4 * PI/6 & 135 deg = 3 * PI/4 &
+  150 deg =5 * PI/6& 180 deg = PI;
+
+theorem 
+  18 deg = 78 deg - PI/3 & 132 deg = PI + PI/6 - 78 deg;
+
+
