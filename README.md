@@ -7,6 +7,14 @@ Monday, July 31, 2023
 
 "Mizar is in a box: a Raspberry PI for checking elementary calculations"
 
+# Usage
+## Preparation:
+mizf ./text/prepa.miz
+
+miz2prel ./text/prepa.miz
+## File:
+./text/exemple.miz
+
 # Author
 Roland Coghetto - roland.coghetto@cafr-msa2p.be - "cafr msa2p" asbl, Belgium
 
